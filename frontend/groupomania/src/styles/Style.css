@@ -1,0 +1,12 @@
+.post {display: flex;
+
+}
+
+.post_btns {
+padding: 10px;}
+
+.post_content {background-color: rgb(240, 239, 239);
+    border: 2px solid blue;
+color: black;
+padding: 40px;
+margin: 5px;}
