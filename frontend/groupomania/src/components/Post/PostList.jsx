@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import PostItem from "./PostItem";
-import {Button} from '@mui/material';
+
 
 
 const PostList = function ({posts, title}) {
