@@ -1,5 +1,5 @@
 //https://www.section.io/engineering-education/how-to-implement-material-ui-in-react/
-import React, {useState} from "react";
+import React, {useState, useRef} from "react";
 import './App.css';
 import {Button} from '@mui/material';
 
@@ -33,8 +33,15 @@ const [posts2, setPosts2] = useState([
   {id: 3, title: 'Python', body: 'Python is a programming language'}
 ])
 
-const addNewPost = () => {
+const [post, setPost] = useState({title: '', body: ''})
 
+
+
+const addNewPost = (e) => {
+e.preventDefault()
+  // it's very important to add smth new in the end of current massif
+setPosts([...posts, {...post, id: Date.now()}])
+setPost({title: '', body: ''})
 }
 
   return (
@@ -45,8 +52,18 @@ const addNewPost = () => {
         {lis}
        </ul> */}
        <form>
-        <MyInput type="text" placeholder="Title of post"/>
-        <MyInput type="text" placeholder="Text of post"/>
+        {/* componente controlée */}
+        <MyInput 
+        value={post.title} 
+        onChange={e => setPost({...post, title: e.target.value})} 
+        type="text" 
+        placeholder="Title of post"/>
+        {/* componente non-controlée useRef*/}
+        <MyInput 
+        value={post.body} 
+        onChange={e => setPost({...post, body: e.target.value})}
+        type="text" 
+        placeholder="Text of post"/>
         <Button onClick={addNewPost} variant="contained">Add a post</Button>
        </form>
         <PostList posts={posts} title='All about JS'/>
