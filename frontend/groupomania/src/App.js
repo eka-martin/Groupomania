@@ -14,12 +14,12 @@ import MyInput from "./components/UI/input/MyInput";
 function App() {
   
   
-  const items = [
-    'Tache1',
-    'Tache2',
-    'Tache3',
-  ]
-  const lis = items.map((item, k) => <li key={k}>{item}</li>)
+  // const items = [
+  //   'Tache1',
+  //   'Tache2',
+  //   'Tache3',
+  // ]
+  // const lis = items.map((item, k) => <li key={k}>{item}</li>)
 
 const [posts, setPosts] = useState([
   {id: 1, title: 'Javascript', body: 'Javascript is a programming language'},
@@ -34,16 +34,16 @@ const [posts2, setPosts2] = useState([
 ])
 
 const addNewPost = () => {
-  
+
 }
 
   return (
     <div className="App">
       <header className="App-header">
-        <Counter/>
-       <ul>
+        {/* <Counter/> */}
+       {/* <ul>
         {lis}
-       </ul>
+       </ul> */}
        <form>
         <MyInput type="text" placeholder="Title of post"/>
         <MyInput type="text" placeholder="Text of post"/>
