@@ -6,7 +6,7 @@ import {Button} from '@mui/material';
 import Counter from './components/Counter';
 import PostItem from "./components/Post/PostItem";
 import PostList from "./components/Post/PostList";
-import MyInput from "./components/UI/input/MyInput";
+import PostForm from "./components/Post/PostForm";
 
 
 
@@ -33,8 +33,7 @@ const [posts2, setPosts2] = useState([
   {id: 3, title: 'Python', body: 'Python is a programming language'}
 ])
 
-const [title, setTitle] = useState('')
-const [body, setBody] = useState('')
+
 
 
 
@@ -58,21 +57,7 @@ setBody('')
        {/* <ul>
         {lis}
        </ul> */}
-       <form>
-        {/* componente controlée */}
-        <MyInput 
-        value={title} 
-        onChange={e => setTitle(e.target.value)} 
-        type="text" 
-        placeholder="Title of post"/>
-        {/* componente non-controlée useRef*/}
-        <MyInput 
-        value={body} 
-        onChange={e => setBody(e.target.value)}
-        type="text" 
-        placeholder="Text of post"/>
-        <Button onClick={addNewPost} variant="contained">Add a post</Button>
-       </form>
+       <PostForm/>
         <PostList posts={posts} title='All about JS'/>
         <PostList posts={posts2} title='All about Python'/>
       </header>
