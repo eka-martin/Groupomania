@@ -4,8 +4,8 @@ import './App.css';
 import {Button} from '@mui/material';
 
 import Counter from './components/Counter';
-import PostItem from "./components/PostItem";
-import PostList from "./components/PostList";
+import PostItem from "./components/Post/PostItem";
+import PostList from "./components/Post/PostList";
 import MyInput from "./components/UI/input/MyInput";
 
 
@@ -33,15 +33,22 @@ const [posts2, setPosts2] = useState([
   {id: 3, title: 'Python', body: 'Python is a programming language'}
 ])
 
-const [post, setPost] = useState({title: '', body: ''})
+const [title, setTitle] = useState('')
+const [body, setBody] = useState('')
 
 
 
 const addNewPost = (e) => {
 e.preventDefault()
   // it's very important to add smth new in the end of current massif
-setPosts([...posts, {...post, id: Date.now()}])
-setPost({title: '', body: ''})
+const newPost = {
+  id: Date.now(),
+  title,
+  body
+}
+setPosts([...posts, newPost])
+setTitle('')
+setBody('')
 }
 
   return (
@@ -54,14 +61,14 @@ setPost({title: '', body: ''})
        <form>
         {/* componente controlée */}
         <MyInput 
-        value={post.title} 
-        onChange={e => setPost({...post, title: e.target.value})} 
+        value={title} 
+        onChange={e => setTitle(e.target.value)} 
         type="text" 
         placeholder="Title of post"/>
         {/* componente non-controlée useRef*/}
         <MyInput 
-        value={post.body} 
-        onChange={e => setPost({...post, body: e.target.value})}
+        value={body} 
+        onChange={e => setBody(e.target.value)}
         type="text" 
         placeholder="Text of post"/>
         <Button onClick={addNewPost} variant="contained">Add a post</Button>
