@@ -1,7 +1,7 @@
 //https://www.section.io/engineering-education/how-to-implement-material-ui-in-react/
-import React, {useState, useRef} from "react";
+import React, {useState} from "react";
 import './App.css';
-import {Button} from '@mui/material';
+
 
 import Counter from './components/Counter';
 import PostItem from "./components/Post/PostItem";
@@ -34,20 +34,8 @@ const [posts2, setPosts2] = useState([
 ])
 
 
-
-
-
-const addNewPost = (e) => {
-e.preventDefault()
-  // it's very important to add smth new in the end of current massif
-const newPost = {
-  id: Date.now(),
-  title,
-  body
-}
-setPosts([...posts, newPost])
-setTitle('')
-setBody('')
+const createPost = (newPost)  => {
+  setPosts([...posts, newPost])
 }
 
   return (
@@ -57,7 +45,7 @@ setBody('')
        {/* <ul>
         {lis}
        </ul> */}
-       <PostForm/>
+       <PostForm create={createPost}/>
         <PostList posts={posts} title='All about JS'/>
         <PostList posts={posts2} title='All about Python'/>
       </header>
