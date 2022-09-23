@@ -1,7 +1,6 @@
 import React, {useState} from "react";
-import MyInput from "./components/UI/input/MyInput";
+import MyInput from "../UI/input/MyInput";
 import {Button} from '@mui/material';
-
 
 const PostForm = function ({create}) {
 const [title, setTitle] = useState('')
@@ -22,13 +21,12 @@ const addNewPost = (e) => {
     return (
         
         <form>
-        {/* componente controlée */}
         <MyInput 
         value={title} 
         onChange={e => setTitle(e.target.value)} 
         type="text" 
         placeholder="Title of post"/>
-        {/* componente non-controlée useRef*/}
+        
         <MyInput 
         value={body} 
         onChange={e => setBody(e.target.value)}
@@ -36,8 +34,7 @@ const addNewPost = (e) => {
         placeholder="Text of post"/>
         <Button onClick={addNewPost} variant="contained">Add a post</Button>
        </form>
-          
-          
+                    
     )
 }
 
