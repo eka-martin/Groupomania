@@ -3,8 +3,12 @@ import PostItem from "./PostItem";
 
 
 
-const PostList = function ({posts, title, remove}) {
-    
+const PostList = ({posts, title, remove}) => {
+//     if (!posts.lenght) {
+// return (
+//     <h1>Posts are not found</h1>
+// )
+    // }
     return (
         <div>
         <h1>{title}</h1>
