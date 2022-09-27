@@ -21,7 +21,7 @@ const [filter, setFilter] = useState({sort: '', query: ''})
 const sortedAndSearchedPosts = usePosts(posts, filter.sort, filter.query)
 
 async function fetchPosts() {
-  const response = await axios.get('https://jsonplaceholder.typicode.com/posts')
+  const response = await axios.get(`https://jsonplaceholder.typicode.com/posts`)
   console.log(response.data)
 }
 
