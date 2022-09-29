@@ -1,20 +1,19 @@
 import React from "react";
 import './App.css';
-import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import {BrowserRouter, Route, Routes } from "react-router-dom";
 import About from "./pages/About";
 import Posts  from "./pages/Posts";
-
+import Error  from "./pages/Error";
+import Navbar from "./components/UI/navbar/Navbar";
+import AppRouter from "./components/Routers/AppRouter";
 
 function App() {
    
   return (
-    <Router>
-      
-      <Route path="/about" component={About}/>
-      <Route path="/posts" component={Posts}/>
-       
-      
-    </Router>
+    <BrowserRouter>
+    <Navbar/>
+    <AppRouter/>       
+    </BrowserRouter>
     
   );
 

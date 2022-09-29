@@ -24,3 +24,32 @@
   border: 2px solid red;
   font-weight: bold;
 }
+
+.navbar {
+  height: 50px;
+display: flex;
+}
+
+.navbar__links {
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  
+}
+
+.error {
+  display: flex;
+}
+
+.error__text {
+  color: #e64f13;
+  font-size: 26px;
+}
+
+.post__btns {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  
+}
