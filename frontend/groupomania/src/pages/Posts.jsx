@@ -50,7 +50,7 @@ const changePage = (page) => {
 }
   return (
     <div className="App">
-      <header className="App-header">
+      <div className="App-wrapper">
        <PostFilter
        filter={filter}
        setFilter={setFilter}/>
@@ -61,7 +61,7 @@ const changePage = (page) => {
        ? <h1>Loading............</h1>
        : <PostList remove={removePost} posts={sortedAndSearchedPosts} title='All about JS'/>}
        <Pagination page={page} changePage={changePage} totalPages={totalPages}/>
-       </header>
+       </div>
     </div>
    
   

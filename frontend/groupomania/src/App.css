@@ -1,3 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .App {
   text-align: center;
   display: flex;
@@ -7,9 +19,8 @@
   justify-content: center;
 }
 
-.App-header {
+.App-wrapper {
   background-color: #e64f13;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;

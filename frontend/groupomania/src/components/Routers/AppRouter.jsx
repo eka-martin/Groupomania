@@ -7,7 +7,7 @@ import PostIdPage from "../../pages/PostIdPage";
 import { publicRoutes, privateRoutes } from "../../router";
 
 function AppRouter() {
-  const isAuth = true; 
+  const isAuth = false; 
   return (
         isAuth
         ?
