@@ -2,12 +2,14 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
 }
 
 #root {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: 'Lato', sans-serif;
 }
 
 .App {
@@ -20,13 +22,12 @@
 }
 
 .App-wrapper {
-  background-color: #e64f13;
+  background-color: #FFD7D7;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
+
   
 }
 
