@@ -36,7 +36,7 @@ const PostIdPage = () => {
     {isComLoading
     ? <h1>Loading.......</h1>
     : <div>{comments.map(comm =>
-    <div><h5>{comm.email}</h5>
+    <div key={comm.id}><h5>{comm.email}</h5>
     <div>{comm.body}</div>
     </div>
     )}
