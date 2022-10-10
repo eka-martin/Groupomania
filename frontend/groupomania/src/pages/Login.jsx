@@ -4,6 +4,8 @@ import MyInput from "../components/UI/input/MyInput";
 import { Button } from "@mui/material";
 import { AuthContext } from "../context";
 import { TextField } from "@mui/material";
+import { ThemeProvider } from '@mui/material/styles';
+import theme from "../styles/Custom";
 
 
 
@@ -17,6 +19,7 @@ console.log(isAuth, 'tes')
     localStorage.setItem('auth', 'true')
   }
   return (
+    <ThemeProvider theme={theme}>
     <div className="App"> 
     <div className="App-wrapper">
      <form onSubmit={login}>
@@ -26,6 +29,7 @@ console.log(isAuth, 'tes')
      </form>  
      </div>
      </div>
+     </ThemeProvider>
   );
 
 }
