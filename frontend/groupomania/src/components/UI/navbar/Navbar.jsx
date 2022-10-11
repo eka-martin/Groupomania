@@ -1,8 +1,8 @@
-import { Button } from "@mui/material";
 import React from "react";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../context";
+import { Button, AppBar, Toolbar, Typography} from '@mui/material';
 
 
 function Navbar() {
@@ -12,13 +12,26 @@ function Navbar() {
     localStorage.removeItem('auth')
   }
   return (
-    <div className="navbar">
-      <Button onClick={logout}>Log out</Button>
-      <div className="navbar__links">
+    
+      <AppBar position="static">
+            <Toolbar>
+                <Typography
+                sx={{
+                  flexGrow:'1'
+                }}>
+                    GROUPOMANIA
+                </Typography>
+              
+      
         <Link to="/about">About</Link>
         <Link to="/posts">Posts</Link>
-      </div>
-    </div>
+        <Button color="secondary" onClick={logout}>Log out</Button>
+      
+            </Toolbar>
+        </AppBar>
+      
+      
+    
   
   );
 

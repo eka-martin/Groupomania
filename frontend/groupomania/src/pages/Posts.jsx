@@ -10,6 +10,7 @@ import PostService from "../api/PostService";
 import { useFetching } from "../hooks/useFetching";
 import { getPagesArray, getPagesCount } from "../pages/pages";
 import Pagination from "../components/UI/pagination/Pagination";
+import { Container, Stack } from "@mui/material";
 
 function Posts() {
   
@@ -49,22 +50,25 @@ const changePage = (page) => {
   
 }
   return (
-    <div className="App">
-      <div className="App-wrapper">
+    <>
+    <Stack spacing={6} direction="row">
+      <Container xs={3}>
        <PostFilter
        filter={filter}
        setFilter={setFilter}/>
        <PostForm create={createPost}/>
+       </Container> 
+       <Container xs={3}>
        {postError &&
        <h1>An error ${postError}</h1>}
        {isPostsLoading
        ? <h1>Loading............</h1>
        : <PostList remove={removePost} posts={sortedAndSearchedPosts} title='All about JS'/>}
-       <Pagination page={page} changePage={changePage} totalPages={totalPages}/>
-       </div>
-    </div>
-   
-  
+       </Container>
+           
+       </Stack>
+    <Pagination page={page} changePage={changePage} totalPages={totalPages}/>
+    </>
   );
 
 }
