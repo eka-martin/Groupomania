@@ -1,8 +1,9 @@
 import React from "react";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
+
 import { AuthContext } from "../../../context";
-import { Button, AppBar, Toolbar, Typography} from '@mui/material';
+import { Button, AppBar, Toolbar, Typography } from '@mui/material';
 
 
 function Navbar() {
@@ -15,13 +16,13 @@ function Navbar() {
     
       <AppBar position="static">
             <Toolbar>
-                <Typography
-                sx={{
-                  flexGrow:'1'
-                }}>
-                    GROUPOMANIA
-                </Typography>
-              
+            <Link to="/about">
+            <img
+            
+            alt="logo" 
+            src={require('../../../images/logos/icon-left-font-monochrome-black.svg')} />
+            </Link>
+                         
       
         <Link to="/about">About</Link>
         <Link to="/posts">Posts</Link>
