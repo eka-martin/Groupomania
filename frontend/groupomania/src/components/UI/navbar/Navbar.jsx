@@ -1,6 +1,6 @@
 import React from "react";
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 import { AuthContext } from "../../../context";
 import { Button, AppBar, Toolbar, Typography } from '@mui/material';
@@ -24,8 +24,8 @@ function Navbar() {
             </Link>
                          
       
-        <Link to="/about">About</Link>
-        <Link to="/posts">Posts</Link>
+        <NavLink to="/about" activeStyle>About</NavLink>
+        <NavLink to="/posts" activeStyle>Posts</NavLink>
         <Button color="secondary" onClick={logout}>Log out</Button>
       
             </Toolbar>
