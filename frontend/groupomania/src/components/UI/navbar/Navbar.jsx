@@ -4,7 +4,8 @@ import { Link, NavLink } from "react-router-dom";
 
 import { AuthContext } from "../../../context";
 import { Button, AppBar, Toolbar, Typography } from '@mui/material';
-
+import { ThemeProvider } from '@mui/material/styles';
+import theme from "../../../styles/Custom";
 
 function Navbar() {
   const {isAuth, setIsAuth} = useContext(AuthContext);
@@ -13,8 +14,9 @@ function Navbar() {
     localStorage.removeItem('auth')
   }
   return (
-    
-      <AppBar position="static">
+    <ThemeProvider theme={theme}>
+      <AppBar position="static"
+      sx={{ color: 'text.tertiaire' }}>
             <Toolbar>
             <Link to="/about">
             <img
@@ -30,7 +32,7 @@ function Navbar() {
       
             </Toolbar>
         </AppBar>
-      
+        </ThemeProvider>
       
     
   
