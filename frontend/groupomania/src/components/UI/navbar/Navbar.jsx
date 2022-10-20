@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../context";
 import {  Button, AppBar, Toolbar, Typography, Box } from '@mui/material';
+import { ReactComponent as Logo } from '../../../images/logos/icon-left-font-monochrome-white.svg';
 
 
 // import { ThemeProvider,  } from '@mui/material/styles';
@@ -24,19 +25,17 @@ function Navbar() {
           <Box sx={{ flexGrow: 1 }}>
           <Link to="/about" >
           <div className="logo">
-          <img
-            className="logo_img" 
-            alt="logo" 
-            src={require('../../../images/logos/icon-left-font-monochrome-white.svg')} />
+          <Logo className="logo_img" fill="#FFD7D7"></Logo>
+          
             </div>
             </Link>
             </Box>
           
-          <Link to="/about" activeStyle>
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1, m: 2, color: 'secondary.main' }}>
+          <Link to="/about" style={{ textDecoration: 'none'}}>
+            <Typography variant="h6" component="div" sx={{ flexGrow: 1, m: 3, color: 'secondary.main' }}>
             About
           </Typography></Link>
-        <Link to="/posts" activeStyle><Typography variant="h6" component="div" sx={{ flexGrow: 1, mr: 2, color: 'secondary.main' }}>
+        <Link to="/posts" style={{ textDecoration: 'none'}}><Typography variant="h6" component="div" sx={{ flexGrow: 1, mr: 3, color: 'secondary.main' }}>
             Posts
           </Typography></Link>
        <Button variant="contained" color="secondary" onClick={logout}>Log out</Button>
