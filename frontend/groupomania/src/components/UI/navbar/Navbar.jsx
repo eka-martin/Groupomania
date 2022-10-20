@@ -16,7 +16,7 @@ function Navbar() {
   return (
     
       <AppBar position="static" sx={{ bgcolor: 'tertiaire.main' }}>
-            <Toolbar>
+            <Toolbar style={{ width: '100%' }}>
             <Box sx={{ display: 'flex', p: 1 }}>
             <Link to="/about" >
             <img
