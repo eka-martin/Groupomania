@@ -17,15 +17,15 @@ function Navbar() {
   return (
     
 
-    <Box sx={{ flexGrow: 1, width: '100%' }}>
-      <AppBar position="static">
+    <Box sx={{ flexGrow: 1, width: '100%', bgcolor: 'tertiaire.main' }}>
+      <AppBar position="static" sx={{ bgcolor: 'tertiaire.main' }}>
         <Toolbar >
          
           <Box sx={{ flexGrow: 1 }}>
           <Link to="/about" >
           <div className="logo">
           <img
-             
+            className="logo_img" 
             alt="logo" 
             src={require('../../../images/logos/icon-left-font-monochrome-white.svg')} />
             </div>
@@ -33,13 +33,13 @@ function Navbar() {
             </Box>
           
           <Link to="/about" activeStyle>
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1, m: 2 }}>
+            <Typography variant="h6" component="div" sx={{ flexGrow: 1, m: 2, color: 'secondary.main' }}>
             About
           </Typography></Link>
-        <Link to="/posts" activeStyle><Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+        <Link to="/posts" activeStyle><Typography variant="h6" component="div" sx={{ flexGrow: 1, mr: 2, color: 'secondary.main' }}>
             Posts
           </Typography></Link>
-       <Button color="secondary" onClick={logout}>Log out</Button>
+       <Button variant="contained" color="secondary" onClick={logout}>Log out</Button>
         </Toolbar>
       </AppBar>
     </Box>
