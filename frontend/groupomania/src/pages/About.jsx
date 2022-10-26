@@ -6,8 +6,8 @@ import  Picture  from '../images/logos/Blog-post-pana.png';
 function About() {
    
   return (
-    <Container maxWidth="sm">
-    <Stack spacing={2}
+    <Container className="main" maxWidth="sm">
+    <Stack 
     justifyContent="space-evenly"
     alignItems="center" 
     divider={<Divider orientation="horizontal" flexItem />}>

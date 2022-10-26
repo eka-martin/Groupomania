@@ -18,7 +18,7 @@ function Navbar() {
   return (
     
 
-    <Box sx={{ flexGrow: 1, width: '100%', bgcolor: 'tertiaire.main' }}>
+    <Box sx={{ flexGrow: 1, width: '100%' }}>
       <AppBar position="static" sx={{ bgcolor: 'tertiaire.main' }}>
         <Toolbar >
          

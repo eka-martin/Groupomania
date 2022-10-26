@@ -20,8 +20,13 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  
 }
 
+.main {
+  flex-grow: 1;
+  min-height: calc(100vh - 300px);
+}
 
 .logo {
   width: 300px;
@@ -31,6 +36,21 @@
   width: 100%;
   height: fit-content;
      
+}
+
+.picture_div {
+  width: 600px;
+}
+
+.picture {
+  width: 100%;
+  height: fit-content;
+     
+}
+
+.about_div {
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .page__wrapper {
@@ -57,18 +77,3 @@ display: flex;
   
 }
 
-.error {
-  display: flex;
-}
-
-.error__text {
-  color: #e64f13;
-  font-size: 26px;
-}
-
-.post__btns {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-  
-}
