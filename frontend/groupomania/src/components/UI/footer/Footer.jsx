@@ -5,32 +5,28 @@ function Footer() {
     
   return (
     <div className="footer">
-    <h1 style={{ color: '#FD2D01', 
-                 textAlign: "center", 
-                 marginTop: "-50px" }}>
-      Groupomania
-    </h1>
     <div className="container">
       <div className="row">
         <div className="column">
-          <h2>About Us</h2>
-          <a href="#">Aim</a>
-          <a href="#">Vision</a>
-          <a href="#">Testimonials</a>
+          <h2>Groupomania</h2>
+          <a href="#">Qui sommes-nous ?</a>
+          <a href="#">Presse</a>
+          <a href="#">Forum</a>
+          <a href="#">Nous rejoindre</a>
         </div>
         <div className="column">
-          <h2>Services</h2>
-          <a href="#">Writing</a>
-          <a href="#">Internships</a>
-          <a href="#">Coding</a>
-          <a href="#">Teaching</a>
+          <h2>Contactez-nous</h2>
+          <a href="#">example@mail.fr</a>
+          <a href="#">+33 123 456 7</a>
+          <a href="#">12 rue Chanzy Paris 75012</a>
+          
         </div>
         <div className="column">
-          <h2>Contact Us</h2>
-          <a href="#">Uttar Pradesh</a>
-          <a href="#">Ahemdabad</a>
-          <a href="#">Indore</a>
-          <a href="#">Mumbai</a>
+          <h2>En plus</h2>
+          <a href="#">Mentions légales</a>
+          <a href="#">Conditions générales d'utilisation</a>
+          <a href="#">Politique de protection des données personnelles</a>
+          
         </div>
         <div className="column">
             <h2>Social Media</h2>
