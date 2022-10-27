@@ -1,5 +1,5 @@
  .footer
- { padding: 80px 60px;
+ { padding: 60px 40px;
   background: #4E5166;
   position: relative;
   bottom: 0;
@@ -29,14 +29,17 @@
   {display: grid;
   grid-template-columns: repeat(auto-fill, 
                          minmax(185px, 1fr));
-  grid-gap: 20px;}
+  grid-gap: 30px;}
    
   
 
    
-a {color: #fff;
+.link {
+  display: flex;
+  align-items: center;
+  color: #fff;
   margin-bottom: 20px;
-  font-size: 18px;
+  font-size: 14px;
   text-decoration: none;}
    
   a:hover {
@@ -46,7 +49,7 @@ a {color: #fff;
 
    
  h2 
- { font-size: 24px;
+ { font-size: 20px;
   color: #fff;
   margin-bottom: 40px;
   font-weight: bold;}

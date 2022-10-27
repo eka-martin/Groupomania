@@ -1,4 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
+import YouTubeIcon from '@mui/icons-material/YouTube';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import InstagramIcon from '@mui/icons-material/Instagram';
+
 import  "./footer.css";
 
 function Footer() {
@@ -9,55 +15,55 @@ function Footer() {
       <div className="row">
         <div className="column">
           <h2>Groupomania</h2>
-          <a href="#">Qui sommes-nous ?</a>
-          <a href="#">Presse</a>
-          <a href="#">Forum</a>
-          <a href="#">Nous rejoindre</a>
+          <Link to="/about" className="link">Qui sommes-nous ?</Link>
+          <Link to="/about" className="link">Presse</Link>
+          <Link to="/about" className="link">Forum</Link>
+          <Link to="/about" className="link">Nous rejoindre</Link>
         </div>
         <div className="column">
           <h2>Contactez-nous</h2>
-          <a href="#">example@mail.fr</a>
-          <a href="#">+33 123 456 7</a>
-          <a href="#">12 rue Chanzy Paris 75012</a>
+          <Link to="/about" className="link">example@mail.fr</Link>
+          <Link to="/about" className="link">+33 123 456 7</Link>
+          <Link to="/about" className="link">12 rue Chanzy Paris 75012</Link>
           
         </div>
         <div className="column">
           <h2>En plus</h2>
-          <a href="#">Mentions légales</a>
-          <a href="#">Conditions générales d'utilisation</a>
-          <a href="#">Politique de protection des données personnelles</a>
+          <Link to="/about" className="link">Mentions légales</Link>
+          <Link to="/about" className="link">Conditions générales d'utilisation</Link>
+          <Link to="/about" className="link">Politique de protection des données personnelles</Link>
           
         </div>
         <div className="column">
             <h2>Social Media</h2>
-            <a href="#">
-              <i className="fab fa-facebook-f">
+            <Link to="/about" className="link">
+            <FacebookOutlinedIcon sx={{ fontSize: 20 }}/>
                 <span style={{ marginLeft: "10px" }}>
                   Facebook
                 </span>
-              </i>
-            </a>
-            <a href="#">
-              <i className="fab fa-instagram">
+              
+            </Link>
+            <Link to="/about" className="link">
+              <InstagramIcon sx={{ fontSize: 20 }}/>
                 <span style={{ marginLeft: "10px" }}>
                   Instagram
                 </span>
-              </i>
-            </a>
-            <a href="#">
-              <i className="fab fa-twitter">
+              
+            </Link>
+            <Link to="/about" className="link">
+              <TwitterIcon sx={{ fontSize: 20 }}/>
                 <span style={{ marginLeft: "10px" }}>
                   Twitter
                 </span>
-              </i>
-            </a>
-            <a href="#">
-              <i className="fab fa-youtube">
+              
+            </Link>
+            <Link to="/about" className="link">
+              <YouTubeIcon sx={{ fontSize: 20 }}/>
                 <span style={{ marginLeft: "10px" }}>
                   Youtube
                   </span>
-              </i>
-            </a>
+              
+            </Link>
           </div>
         </div>
       </div>
@@ -67,3 +73,4 @@ function Footer() {
 
 
 export default Footer;
+

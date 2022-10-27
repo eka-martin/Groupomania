@@ -9,8 +9,8 @@ import theme from "../styles/Custom";
 
 
 const Login = () => {
-  const {isAuth, setIsAuth} = useContext(AuthContext);
-console.log(isAuth)
+  const { isAuth, setIsAuth } = useContext(AuthContext);
+  console.log(isAuth)
   const login = event => {
     event.preventDefault();
     console.log('login');
@@ -19,15 +19,15 @@ console.log(isAuth)
   }
   return (
     <ThemeProvider theme={theme}>
-    <Container
-    sx={{md:'1rem'}}>
-     <form onSubmit={login}>
-     <TextField id="outlined-basic" label="Login" variant="outlined" />
-     <TextField id="outlined-basic" label="Password" variant="outlined" />
-     <Button type="submit" variant="contained" >Log In</Button>
-     </form>  
-     </Container>
-     </ThemeProvider>
+      <Container
+        sx={{ md: '1rem' }}>
+        <form onSubmit={login}>
+          <TextField id="outlined-basic" label="Login" variant="outlined" />
+          <TextField id="outlined-basic" label="Password" variant="outlined" />
+          <Button type="submit" variant="contained" >Log In</Button>
+        </form>
+      </Container>
+    </ThemeProvider>
   );
 
 }

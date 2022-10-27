@@ -22,9 +22,9 @@ function App() {
     <BrowserRouter>
     <Navbar/>
     <AppRouter/>
-          
+    <Footer/>      
     </BrowserRouter>
-    <Footer/> 
+     
     </AuthContext.Provider>
     
   );
