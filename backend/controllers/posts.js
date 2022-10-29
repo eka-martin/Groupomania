@@ -2,7 +2,7 @@
 const Post = require('../models/Post');
 const fs = require('fs');
 
-//logique de création de sauce
+//logique de création de post
 exports.createPost = (req, res, next) => {
     const postObject = JSON.parse(req.body.post);
     delete postObject._id;
@@ -63,7 +63,10 @@ exports.deletePost = (req, res, next) => {
 };
 
 exports.searchOnePost = (req, res, next) => {
-    Post.findOne({ _id: req.params.id })
+    Post.findOneAndUpdate({ _id: req.params.id },
+        {
+            $inc: { viewsCount: 1}
+        })
         .then(
             (post) => {
                 res.status(200).json(post);
