@@ -1,34 +1,30 @@
-import React, { useEffect, useState } from "react";
-import './App.css';
-import {BrowserRouter, Route, Routes } from "react-router-dom";
-import Navbar from "./components/UI/navbar/Navbar";
-import Footer from "./components/UI/footer/Footer";
-import AppRouter from "./components/Routers/AppRouter";
-import { AuthContext } from "./context";
+import React from 'react';
+import Container from "@mui/material/Container";
+import { Routes, Route } from 'react-router-dom';
+import { Header } from "./components/Header";
+//import { Footer } from "./components/Footer";
+import { FullPost } from "./pages/FullPost";
+import {  Registration } from "./pages/Registration";
+import { AddPost } from "./pages/AddPost";
+import {  Login } from "./pages/Login/index";
+import { Home } from "./pages/Home";
 
 function App() {
-  const [isAuth, setIsAuth] = useState(false); 
-
-  useEffect(() => {
-    if(localStorage.getItem('auth')) {
-      setIsAuth(true)
-    }
-  }, [])
   return (
-    <AuthContext.Provider value ={{
-      isAuth,
-      setIsAuth
-    }}>
-    <BrowserRouter>
-    <Navbar/>
-    <AppRouter/>
-    <Footer/>      
-    </BrowserRouter>
-     
-    </AuthContext.Provider>
-    
+    <>
+      <Header />
+      <Container maxWidth="lg">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/posts/:id" element={<FullPost />} />
+          <Route path="/add-post" element={<AddPost />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Registration />} />
+          </Routes>
+      </Container>
+      {/* <Footer /> */}
+    </>
   );
-
 }
 
 export default App;

@@ -1,9 +1,11 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
+import cors from 'cors';
 const path = require('path');
 const helmet = require('helmet');
 require('dotenv').config();
+
 
 const saucesRoutes = require('./routes/sauces');
 const userRoutes = require('./routes/user');
@@ -18,6 +20,7 @@ mongoose.connect(process.env.SECRET_DB,
     .catch(() => console.log('Connexion à MongoDB échouée !'));
 
 app.use(express.json());
+app.use(cors());
 
 app.use(helmet({
     crossOriginResourcePolicy: false,

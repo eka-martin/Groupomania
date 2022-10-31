@@ -7,7 +7,7 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 
 import  "./footer.css";
 
-function Footer() {
+export const Footer = () => {
     
   return (
     <div className="footer">
@@ -72,5 +72,5 @@ function Footer() {
 }
 
 
-export default Footer;
+//export default Footer;
 
