@@ -14,7 +14,7 @@ export const Home = () => {
 const { posts, tags} = useSelector(state => state.posts);
 
 const isPostsLoading = posts.status === 'loading';
-
+const isTagsLoading = tags.status === 'loading';
 
   React.useEffect(() => {
     dispatch(fetchPosts())
@@ -46,7 +46,7 @@ const isPostsLoading = posts.status === 'loading';
           )}
         </Grid>
         <Grid xs={4} item>
-          <TagsBlock items={tags.items} isLoading={true} />
+          <TagsBlock items={tags.items} isLoading={isTagsLoading} />
           <CommentsBlock
             items={[
               {
