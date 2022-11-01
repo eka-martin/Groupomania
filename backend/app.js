@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
-import cors from 'cors';
+const cors = require('cors');
 const path = require('path');
 const helmet = require('helmet');
 require('dotenv').config();
