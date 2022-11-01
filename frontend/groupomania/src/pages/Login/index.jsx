@@ -10,18 +10,18 @@ export const Login = () => {
   return (
     <Paper classes={{ root: styles.root }}>
       <Typography classes={{ root: styles.title }} variant="h5">
-        Вход в аккаунт
+      Connexion
       </Typography>
       <TextField
         className={styles.field}
         label="E-Mail"
         error
-        helperText="Неверно указана почта"
+        helperText="Email invalid"
         fullWidth
       />
-      <TextField className={styles.field} label="Пароль" fullWidth />
+      <TextField className={styles.field} label="Mot de passe" fullWidth />
       <Button size="large" variant="contained" fullWidth>
-        Войти
+        Log in
       </Button>
     </Paper>
   );

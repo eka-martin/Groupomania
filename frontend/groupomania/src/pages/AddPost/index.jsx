@@ -24,7 +24,7 @@ export const AddPost = () => {
       spellChecker: false,
       maxHeight: '400px',
       autofocus: true,
-      placeholder: 'Введите текст...',
+      placeholder: 'Entrez du texte...',
       status: false,
       autosave: {
         enabled: true,
@@ -37,33 +37,33 @@ export const AddPost = () => {
   return (
     <Paper style={{ padding: 30 }}>
       <Button variant="outlined" size="large">
-        Загрузить превью
+      Télécharger l'aperçu
       </Button>
       <input type="file" onChange={handleChangeFile} hidden />
       {imageUrl && (
         <Button variant="contained" color="error" onClick={onClickRemoveImage}>
-          Удалить
+          Delete
         </Button>
       )}
       {imageUrl && (
-        <img className={styles.image} src={`http://localhost:4444${imageUrl}`} alt="Uploaded" />
+        <img className={styles.image} src={`http://localhost:4000${imageUrl}`} alt="Uploaded" />
       )}
       <br />
       <br />
       <TextField
         classes={{ root: styles.title }}
         variant="standard"
-        placeholder="Заголовок статьи..."
+        placeholder="Le titre de l'article..."
         fullWidth
       />
-      <TextField classes={{ root: styles.tags }} variant="standard" placeholder="Тэги" fullWidth />
+      <TextField classes={{ root: styles.tags }} variant="standard" placeholder="Tags" fullWidth />
       <SimpleMDE className={styles.editor} value={value} onChange={onChange} options={options} />
       <div className={styles.buttons}>
         <Button size="large" variant="contained">
-          Опубликовать
+        Publier
         </Button>
         <a href="/">
-          <Button size="large">Отмена</Button>
+          <Button size="large">Annuler</Button>
         </a>
       </div>
     </Paper>
