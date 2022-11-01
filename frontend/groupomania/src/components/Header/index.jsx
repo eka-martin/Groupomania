@@ -3,6 +3,7 @@ import Button from '@mui/material/Button';
 import { Link } from "react-router-dom";
 import styles from './Header.module.scss';
 import Container from '@mui/material/Container';
+import { ReactComponent as Logo } from '../../images/logos/icon-left-font-monochrome-white.svg';
 
 export const Header = () => {
   const isAuth = false;
@@ -13,9 +14,11 @@ export const Header = () => {
     <div className={styles.root}>
       <Container maxWidth="lg">
         <div className={styles.inner}>
-          <Link className={styles.logo} to="/">
-            <div>GROUPOMANIA</div>
+          
+          <Link  to="/">
+          <Logo className="logo_img" fill="white" style={{ width: 320, height: 60 }}></Logo>
           </Link>
+          
           <div className={styles.buttons}>
             {isAuth ? (
               <>

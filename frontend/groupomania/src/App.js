@@ -2,7 +2,7 @@ import React from 'react';
 import Container from "@mui/material/Container";
 import { Routes, Route } from 'react-router-dom';
 import { Header } from "./components/Header";
-//import { Footer } from "./components/Footer";
+import { Footer } from "./components/Footer";
 import { FullPost } from "./pages/FullPost";
 import {  Registration } from "./pages/Registration";
 import { AddPost } from "./pages/AddPost";
@@ -22,7 +22,7 @@ function App() {
           <Route path="/register" element={<Registration />} />
           </Routes>
       </Container>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }

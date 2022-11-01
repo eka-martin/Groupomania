@@ -1,12 +1,26 @@
 import { createTheme } from "@mui/material/styles";
 
+const Colors = {
+  primary: '#FD2D01',
+  secondary: '#FFD7D7',
+  tertiaire: '#4E5166',
+    
+};
+
 export const theme = createTheme({
-  shadows: ["none"],
   palette: {
     primary: {
-      main: "#4361ee",
+      main: Colors.primary,
+    },
+    secondary: {
+      main: Colors.secondary,
+    },
+    tertiaire: {
+      main: Colors.tertiaire,
     },
   },
+  
+  shadows: ["none"],
   typography: {
     button: {
       textTransform: "none",
@@ -20,12 +34,7 @@ export const theme = createTheme({
 
 
 
-// const Colors = {
-//     primary: '#FD2D01',
-//     secondary: '#FFD7D7',
-//     tertiaire: '#4E5166',
-      
-// };
+
 
 // const theme = createTheme({
 //     palette: {
@@ -41,4 +50,4 @@ export const theme = createTheme({
 //     },
 //   });
 
-//   export default theme;
+  // export default theme;
