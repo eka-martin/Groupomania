@@ -33,8 +33,9 @@ const isTagsLoading = tags.status === 'loading';
             <Post key={index} isLoading={true} />
             )  : (<Post
               id={obj._id}
-              title={obj._title} //"Augmentation du chiffre d'affaires trimestriel de l'entreprise"
-              imageUrl="https://images.pexels.com/photos/1595385/pexels-photo-1595385.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+              title={obj.title} //"Augmentation du chiffre d'affaires trimestriel de l'entreprise"
+              imageUrl={obj.imageUrl}
+              //imageUrl="https://images.pexels.com/photos/1595385/pexels-photo-1595385.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
               user={obj.user}
               createdAt={obj.createdAt}
               viewsCount={obj.viewsCount}
