@@ -65,7 +65,7 @@ exports.deletePost = (req, res, next) => {
 exports.searchOnePost = (req, res, next) => {
     Post.findOneAndUpdate({ _id: req.params.id },
         {
-            $inc: { viewsCount: 1}
+            $inc: { viewsCount: 1 }
         })
         .then(
             (post) => {
@@ -95,19 +95,20 @@ exports.searchAllPosts = (req, res, next) => {
         );
 };
 
-// export const getAllTags = async (req, res) => {
-//     try {
-//     const posts = await Post.find().limit(5).exec();
-//     const tags = posts.map((obj) => obj.tags).flat().slice(0, 5)
-        
-//                 res.json(tags);
-//             } catch (err) {
-//                 console.log(err);
-//                 res.status(500).json({
-//                 message: "Les tags n'ont pas trouvés"
-//             });
-//             }
-// };
+exports.getAllTags = (req, res) => {
+    (Post.find().limit(5).exec()).map((obj) => obj.tags).flat().slice(0, 5)
+        .then(
+            (tags) => {
+                res.status(200).json(tags)
+            }
+
+        ).catch((error) => {
+            res.status(404).json({
+                message: "Les tags n'ont pas trouvés"
+            });
+        }
+        )
+};
 
 // Fonction pour la gestion des "likes/dislikes"
 exports.likePost = (req, res, next) => {

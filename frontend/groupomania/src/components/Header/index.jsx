@@ -13,7 +13,8 @@ export const Header = () => {
 
   const onClickLogout = () => {
     if (window.confirm('Vous etes sur que vous voulez partir?')) {
-      dispatch(logout())
+      dispatch(logout());
+      window.localStorage.removeItem('token')
     }
   };
 

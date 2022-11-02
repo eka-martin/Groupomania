@@ -6,6 +6,7 @@ export const fetchAuth = createAsyncThunk('auth/fetchAuth', async (params) => {
     return data;
 })
 
+
 const initialState = {
     data: null,
     status: 'loading',
