@@ -95,19 +95,19 @@ exports.searchAllPosts = (req, res, next) => {
         );
 };
 
-export const getAllTags = async (req, res) => {
-    try {
-    const posts = await Post.find().limit(5).exec();
-    const tags = posts.map((obj) => obj.tags).flat().slice(0, 5)
+// export const getAllTags = async (req, res) => {
+//     try {
+//     const posts = await Post.find().limit(5).exec();
+//     const tags = posts.map((obj) => obj.tags).flat().slice(0, 5)
         
-                res.json(tags);
-            } catch (err) {
-                console.log(err);
-                res.status(500).json({
-                message: "Les tags n'ont pas trouvés"
-            });
-            }
-};
+//                 res.json(tags);
+//             } catch (err) {
+//                 console.log(err);
+//                 res.status(500).json({
+//                 message: "Les tags n'ont pas trouvés"
+//             });
+//             }
+// };
 
 // Fonction pour la gestion des "likes/dislikes"
 exports.likePost = (req, res, next) => {
