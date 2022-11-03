@@ -10,7 +10,7 @@ require('dotenv').config();
 const postsRoutes = require('./routes/posts');
 const userRoutes = require('./routes/user');
 
-
+console.log(process.env.SECRET_DB)
 mongoose.connect(process.env.SECRET_DB,
     {
         useNewUrlParser: true,

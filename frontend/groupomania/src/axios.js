@@ -1,12 +1,16 @@
-import axios from 'axios';
+import * as a  from 'axios';
 
-const instance = axios.create({
-    baseUrl: 'http://localhost:4000'
+export let axios = a.create({
+    baseURL: 'http://localhost:4000/api'
 });
 
-instance.interceptors.request.use((config) => {
+axios.interceptors.request.use((config) => {
 config.headers.Authorization = window.localStorage.getItem('token');
 return config;
 })
 
-export default instance;
+
+
+
+
+

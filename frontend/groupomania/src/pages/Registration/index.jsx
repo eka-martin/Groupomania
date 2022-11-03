@@ -73,7 +73,7 @@ export const Registration = () => {
         helperText={errors.password?.message}
         {...register('password', { required: 'Entrez mot de passe' })}
         fullWidth />
-      <Button disabled={!isValid} type="submit" size="large" variant="contained" fullWidth>
+      <Button  type="submit" size="large" variant="contained" fullWidth>
         Enregistrer
       </Button>
       </form>
