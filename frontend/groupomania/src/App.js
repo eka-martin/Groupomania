@@ -17,7 +17,7 @@ function App() {
   const isAuth = useSelector(selectIsAuth)
 
   React.useEffect(() => {
-    dispatch(fetchAuth)
+    dispatch(fetchAuth())
   }, [])
   return (
     <>
@@ -26,6 +26,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/posts/:id" element={<FullPost />} />
+          <Route path="/posts/:id/edit" element={<AddPost />} />
           <Route path="/add-post" element={<AddPost />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Registration />} />

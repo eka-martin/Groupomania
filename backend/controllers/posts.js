@@ -7,8 +7,10 @@ exports.createPost = (req, res, next) => {
     const postObject = JSON.parse(req.body.post);
     delete postObject._id;
     delete postObject._userId;
+    delete postObject.tags;
     const post = new Post({
         ...postObject,
+        tags: req.body.tags.split(','),
         userId: req.auth.userId,
         likes: 0,
         dislikes: 0,
@@ -27,12 +29,13 @@ exports.modifyPost = (req, res, next) => {
         imageUrl: `${req.protocol}://${req.get('host')}/images/${req.file.filename}`
     } : { ...req.body };
     delete postObject._userId;
+    delete postObject.tags;
     Post.findOne({ _id: req.params.id })
         .then((post) => {
             if (post.userId != req.auth.userId) {
                 res.status(401).json({ message: 'Non-authorisé' });
             } else {
-                Post.updateOne({ _id: req.params.id }, { ...postObject, _id: req.params.id })
+                Post.updateOne({ _id: req.params.id }, { ...postObject, _id: req.params.id, tags: req.body.tags.split(',') })
                     .then(() => res.status(200).json({ message: 'Objet modifié!' }))
                     .catch(error => res.status(401).json({ error }));
             }
@@ -77,7 +80,7 @@ exports.searchOnePost = (req, res, next) => {
                     error: error
                 });
             }
-        );
+        ).populate('user');
 };
 
 exports.searchAllPosts = (req, res, next) => {

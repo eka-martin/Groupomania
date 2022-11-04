@@ -11,6 +11,7 @@ import { fetchPosts, fetchTags } from '../redux/slices/posts';
 
 export const Home = () => {
   const dispatch = useDispatch();
+const userData = useSelector(state => state.auth.data);
 const { posts, tags} = useSelector(state => state.posts);
 
 const isPostsLoading = posts.status === 'loading';
@@ -34,7 +35,7 @@ const isTagsLoading = tags.status === 'loading';
             )  : (<Post
               id={obj._id}
               title={obj.title} //"Augmentation du chiffre d'affaires trimestriel de l'entreprise"
-              imageUrl={obj.imageUrl}
+              imageUrl={`http://localhost:4000${obj.imageUrl}`}
               //imageUrl="https://images.pexels.com/photos/1595385/pexels-photo-1595385.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
               user={obj.user}
               createdAt={obj.createdAt}
@@ -42,7 +43,7 @@ const isTagsLoading = tags.status === 'loading';
               commentsCount={3}
               tags={obj.tags}
               isLoading={true}
-              isEditable
+              isEditable={userData?._id === obj.user._id}
             />)
           )}
         </Grid>

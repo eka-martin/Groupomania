@@ -31,7 +31,7 @@ const [isLoading, setLoading] = React.useState(true)
       <Post
         id={data._id}
         title={data.title}
-        imageUrl={data.imageUrl}
+        imageUrl={`http://localhost:4000${data.imageUrl}`}
         //imageUrl="https://images.pexels.com/photos/1595385/pexels-photo-1595385.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
         user={data.user}
         createdAt={data.createdAt}
