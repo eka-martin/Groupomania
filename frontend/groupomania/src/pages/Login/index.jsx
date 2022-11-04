@@ -59,7 +59,7 @@ if (!data.payload) {
           helperText={errors.password?.message}
           {...register('password', { required: 'Entrez password' })}
           fullWidth />
-        <Button disabled={!isValid} type="submit" size="large" variant="contained" fullWidth>
+        <Button  type="submit" size="large" variant="contained" fullWidth>
           Log in
         </Button>
       </form>
