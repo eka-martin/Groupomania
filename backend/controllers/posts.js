@@ -7,10 +7,10 @@ exports.createPost = (req, res, next) => {
     const postObject = JSON.parse(req.body.post);
     delete postObject._id;
     delete postObject._userId;
-    delete postObject.tags;
+    // delete postObject.tags;
     const post = new Post({
         ...postObject,
-        tags: req.body.tags.split(','),
+        // tags: req.body.tags.split(','),
         userId: req.auth.userId,
         likes: 0,
         dislikes: 0,
@@ -98,20 +98,20 @@ exports.searchAllPosts = (req, res, next) => {
         );
 };
 
-exports.getAllTags = (req, res) => {
-    (Post.find().limit(5).exec()).map((obj) => obj.tags).flat().slice(0, 5)
-        .then(
-            (tags) => {
-                res.status(200).json(tags)
-            }
+// exports.getAllTags = (req, res) => {
+//     (Post.find().limit(5).exec()).map((obj) => obj.tags).flat().slice(0, 5)
+//         .then(
+//             (tags) => {
+//                 res.status(200).json(tags)
+//             }
 
-        ).catch((error) => {
-            res.status(404).json({
-                message: "Les tags n'ont pas trouvés"
-            });
-        }
-        )
-};
+//         ).catch((error) => {
+//             res.status(404).json({
+//                 message: "Les tags n'ont pas trouvés"
+//             });
+//         }
+//         )
+// };
 
 // Fonction pour la gestion des "likes/dislikes"
 exports.likePost = (req, res, next) => {
