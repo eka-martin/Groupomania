@@ -8,12 +8,12 @@ const router = express.Router();
 
 const postCtrl = require('../controllers/posts');
 
-router.get('/',  postCtrl.searchAllPosts);
-// router.get('/tags',  postCtrl.getAllTags);
-router.post('/',  multer, postCtrl.createPost);
-router.get('/:id',  postCtrl.searchOnePost);
-router.put('/:id',  multer, postCtrl.modifyPost);
-router.delete('/:id',  postCtrl.deletePost);
-router.post('/:id/like',  postCtrl.likePost);
+router.get('/', auth, postCtrl.searchAllPosts);
+// router.get('/tags', auth, postCtrl.getAllTags);
+router.post('/', multer, postCtrl.createPost);
+router.get('/:id', auth, postCtrl.searchOnePost);
+router.put('/:id', auth, multer, postCtrl.modifyPost);
+router.delete('/:id', auth, postCtrl.deletePost);
+router.post('/:id/like', auth, postCtrl.likePost);
 
 module.exports = router;

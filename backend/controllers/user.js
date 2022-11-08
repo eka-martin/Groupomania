@@ -16,7 +16,7 @@ exports.signup = (req, res, next) => {
                 password: hash
             });
             user.save()
-                .then(() => res.status(201).json({ message: 'Utilisateur créé!' }))
+                .then(() => res.status(201).json({ user }))
                 .catch(error => res.status(400).json({ error }))
         })
         .catch(error => res.status(500).json({ error }));
@@ -36,7 +36,7 @@ exports.login = (req, res, next) => {
                             res.status(200).json({
                                 userId: user._id,
                                 token: jwt.sign(
-                                    //userId c'est pour que les autres utilisateurs pouvez pas modifier ma sauce
+                                    //userId c'est pour que les autres utilisateurs pouvez pas modifier mon post
                                     { userId: user._id },
                                     process.env.SECRET_TOKEN,
                                     { expiresIn: '24h' }
@@ -44,7 +44,7 @@ exports.login = (req, res, next) => {
                             });
                         }
                     })
-                    .catch(error => res.status(500).json({ error }))
+                    .catch(error => res.status(501).json({ error }))
             }
         })
         .catch(error => res.status(500).json({ error }))
