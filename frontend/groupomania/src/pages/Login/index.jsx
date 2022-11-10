@@ -26,6 +26,7 @@ export const Login = () => {
 
   const onSubmit = async (values) => {
     const data = await dispatch(fetchAuth(values));
+console.log(data)
 
 if (!data.payload) {
   return alert("Vous n'etes pas autorisé")

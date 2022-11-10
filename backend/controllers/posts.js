@@ -4,14 +4,18 @@ const fs = require('fs');
 
 //logique de création de post
 exports.createPost = (req, res, next) => {
-    const postObject = JSON.parse(req.body.post);
-    delete postObject._id;
-    delete postObject._userId;
+    //const postObject = JSON.parse(req.body.post);
+    const postObject = req.body;
+    console.log(req.body);
+    // delete postObject._id;
+    // delete postObject._userId;
+    
     // delete postObject.tags;
     const post = new Post({
         ...postObject,
         // tags: req.body.tags.split(','),
-        userId: req.auth.userId,
+        //userId: req.auth.userId,
+        userId: '636a4d39c5bdc248b9e3737c',
         likes: 0,
         dislikes: 0,
         usersLiked: [],
