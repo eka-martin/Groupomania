@@ -9,15 +9,16 @@ import {  Registration } from "./pages/Registration";
 import { AddPost } from "./pages/AddPost";
 import {  Login } from "./pages/Login/index";
 import { Home } from "./pages/Home";
-import { fetchAuth, selectIsAuth } from './redux/slices/auth';
+import { fetchAuthMe, selectIsAuth } from './redux/slices/auth';
 
 function App() {
 
   const dispatch = useDispatch();
-  //const isAuth = useSelector(selectIsAuth)
+  const isAuth = useSelector(selectIsAuth);
+  
 
   React.useEffect(() => {
-    dispatch(fetchAuth())
+    dispatch(fetchAuthMe())
   }, [])
   return (
     <>

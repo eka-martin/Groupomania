@@ -86,10 +86,10 @@ React.useEffect(() => {
       autofocus: true,
       placeholder: 'Entrez du texte...',
       status: false,
-      autosave: {
-        enabled: true,
-        delay: 1000,
-      },
+      // autosave: {
+      //   enabled: true,
+      //   delay: 1000,
+      // },
     }),
     [],
   );

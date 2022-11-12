@@ -14,8 +14,8 @@ exports.createPost = (req, res, next) => {
     const post = new Post({
         ...postObject,
         // tags: req.body.tags.split(','),
-        //userId: req.auth.userId,
-        userId: '636a4d39c5bdc248b9e3737c',
+        userId: req.auth.userId,
+        //userId: '636a4d39c5bdc248b9e3737c',
         likes: 0,
         dislikes: 0,
         usersLiked: [],
@@ -118,6 +118,7 @@ exports.searchAllPosts = (req, res, next) => {
 // };
 
 // Fonction pour la gestion des "likes/dislikes"
+
 exports.likePost = (req, res, next) => {
     Post.findOne({ _id: req.params.id })
         .then(post => {
@@ -148,3 +149,4 @@ exports.likePost = (req, res, next) => {
         })
         .catch(error => res.status(500).json({ error }));
 };
+
