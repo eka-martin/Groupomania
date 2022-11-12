@@ -50,3 +50,14 @@ exports.login = (req, res, next) => {
         .catch(error => res.status(500).json({ error }))
 
 };
+
+exports.me = (req, res) => {
+    try {
+        const user = User.findById(req.userId)
+        if (!user) {
+            return res.status(404).json({ message: 'Pas de user' })
+        }
+        res.status(201).json({ user })
+
+    } catch (err) { res.status(404).json({ message: 'Pas d acces' }) }
+}
