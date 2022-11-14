@@ -1,6 +1,7 @@
 //const { SimplePlaceholderMapper } = require('@angular/compiler/src/i18n/serializers/serializer');
 const Post = require('../models/Post');
 const fs = require('fs');
+const { isDate } = require('util/types');
 
 //logique de création de post
 exports.createPost = (req, res, next) => {
@@ -20,6 +21,7 @@ exports.createPost = (req, res, next) => {
         dislikes: 0,
         usersLiked: [],
         usersDisliked: [],
+        //createdAt: Date.now(),
         imageUrl: `${req.protocol}://${req.get('host')}/images/${req.file.filename}`
     });
     post.save()

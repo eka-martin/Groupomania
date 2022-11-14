@@ -12,10 +12,7 @@ export const fetchRegister = createAsyncThunk('auth/fetchRegister', async (param
 })
 
 export const fetchAuthMe = createAsyncThunk('auth/fetchAuthMe', async () => {
-    
     axios.interceptors.request.use((config) => {
-
-
         config.headers.Authorization = 'Bearer ' + window.localStorage.getItem('token');
         return config;
     })
@@ -84,11 +81,17 @@ const authSlice = createSlice({
     }
 })
 
- export const selectIsAuth = (state) => 
-//{ 
+// export const selectIsAuth = (state) => { 
+//     if(state.auth.data) {     
 //     return true
-// }
-Boolean(state.auth.data);
+// } else { 
+//     return false}
+//      }
+
+
+export const selectIsAuth = (state) =>
+    
+    Boolean(state.auth.data);
 
 export const authReducer = authSlice.reducer;
 
