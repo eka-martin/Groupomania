@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import {axios} from '../../axios';
+import { axios } from '../../axios';
 
 export const fetchAuth = createAsyncThunk('auth/fetchAuth', async (params) => {
     const { data } = await axios.post('auth/login', params);
@@ -12,7 +12,15 @@ export const fetchRegister = createAsyncThunk('auth/fetchRegister', async (param
 })
 
 export const fetchAuthMe = createAsyncThunk('auth/fetchAuthMe', async () => {
-    const { data } = await axios.get('auth/me');
+    
+    axios.interceptors.request.use((config) => {
+
+
+        config.headers.Authorization = 'Bearer ' + window.localStorage.getItem('token');
+        return config;
+    })
+    const { data } = await axios.get(`auth/me`);
+    //const isAuth = true
     return data;
 })
 
@@ -23,12 +31,12 @@ const initialState = {
 };
 
 const authSlice = createSlice({
-    name:'auth',
+    name: 'auth',
     initialState,
     reducers: {
         logout: (state) => {
             state.data = null;
-            
+
         }
     },
     extraReducers: {
@@ -76,8 +84,12 @@ const authSlice = createSlice({
     }
 })
 
-export const selectIsAuth = (state) => Boolean(state.auth.data);
+ export const selectIsAuth = (state) => 
+//{ 
+//     return true
+// }
+Boolean(state.auth.data);
 
 export const authReducer = authSlice.reducer;
 
-export const { logout } = authSlice.actions
+export const { logout } = authSlice.actions;

@@ -8,7 +8,7 @@ const router = express.Router();
 
 const postCtrl = require('../controllers/posts');
 
-router.get('/',  postCtrl.searchAllPosts);
+router.get('/', auth, postCtrl.searchAllPosts);
 // router.get('/tags', auth, postCtrl.getAllTags);
 router.post('/', auth, multer, postCtrl.createPost);
 router.get('/:id', auth, postCtrl.searchOnePost);

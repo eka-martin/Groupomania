@@ -52,12 +52,31 @@ exports.login = (req, res, next) => {
 };
 
 exports.me = (req, res) => {
-    try {
-        const user = User.findById(req.userId)
-        if (!user) {
-            return res.status(404).json({ message: 'Pas de user' })
+    User.findOne({
+        _id: req.auth.userId
+      }).then(
+        (user) => {
+          res.status(200).json(user);
         }
-        res.status(201).json({ user })
+      ).catch(
+        (error) => {
+          res.status(404).json({
+            message: 'Pas d utilisateur'
+          });
+        }
+      );
+    
+    
+    // try {
+    //     const user = User.findById(req.auth.userId)
+    //     console.log(req.auth.userId)
+    //     if (!user) {
+    //         console.log('test')
+    //         res.status(404).json({ message: 'Pas de user' })
+    //     }
+    //     console.log('test2')
+    //     //res.status(201).json( user )
+    //     res.status(200).json({ userId: user._id })
 
-    } catch (err) { res.status(404).json({ message: 'Pas d acces' }) }
+    // } catch (err) { res.status(404).json({ message: 'Pas d acces' }) }
 }
