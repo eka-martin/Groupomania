@@ -1,3 +1,6 @@
+React / Express / MongoDB / Redux
+
+Installer le projet : npm i
 
 FRONT cd frontend/groupomania --npm start--
 
