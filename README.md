@@ -1,5 +1,5 @@
 
-FRONT cd groupomania --npm start--
+FRONT cd frontend/groupomania --npm start--
 
 BACK cd backend --nodemon server--
 
