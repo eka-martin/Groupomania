@@ -105,7 +105,7 @@ React.useEffect(() => {
       <Button onClick={() => inputFileRef.current.click()} variant="outlined" size="large">
         Télécharger l'aperçu
       </Button>
-      <input ref={inputFileRef} type="file" onChange={handleChangeFile} hidden />
+      <input ref={inputFileRef} type="file"  onChange={handleChangeFile} hidden />
       {imageUrl && (
         <>
         <Button variant="contained" color="error" onClick={onClickRemoveImage}>

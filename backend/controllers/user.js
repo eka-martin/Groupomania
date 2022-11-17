@@ -3,6 +3,10 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const { error } = require('console');
 require('dotenv').config();
+
+// const tokenSecret = {
+//     jwtSecret: process.env.SECRET_TOKEN,
+//   };
 //const { secret } = require("../config")
 
 
@@ -13,6 +17,7 @@ exports.signup = (req, res, next) => {
                 fullName: req.body.fullName,
                 email: req.body.email,
                 avatarUrl: req.body.avatarUrl,
+                isAdmin: "false",
                 password: hash
             });
             user.save()
@@ -35,9 +40,11 @@ exports.login = (req, res, next) => {
                         } else {
                             res.status(200).json({
                                 userId: user._id,
+                                isAdmin: user.isAdmin,
                                 token: jwt.sign(
                                     //userId c'est pour que les autres utilisateurs pouvez pas modifier mon post
-                                    { userId: user._id },
+                                    { userId: user._id,
+                                        isAdmin: user.isAdmin, },
                                     process.env.SECRET_TOKEN,
                                     { expiresIn: '24h' }
                                 )
