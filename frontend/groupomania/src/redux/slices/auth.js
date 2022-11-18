@@ -91,7 +91,7 @@ const authSlice = createSlice({
 
 export const selectIsAuth = (state) =>
     
-    Boolean(state.auth.data);
+Boolean(state.auth?.data?.length);
 
 export const authReducer = authSlice.reducer;
 
