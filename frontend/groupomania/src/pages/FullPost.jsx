@@ -36,6 +36,7 @@ const [isLoading, setLoading] = React.useState(true)
         user={data.user}
         createdAt={data.createdAt}
         viewsCount={data.viewsCount}
+        likesCount={data.likes}
         commentsCount={3}
         tags={data.tags}
         isFullPost

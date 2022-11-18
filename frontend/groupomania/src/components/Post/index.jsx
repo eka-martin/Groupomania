@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Clear';
 import EditIcon from '@mui/icons-material/Edit';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 import EyeIcon from '@mui/icons-material/RemoveRedEyeOutlined';
 import CommentIcon from '@mui/icons-material/ChatBubbleOutlineOutlined';
 
@@ -21,6 +22,7 @@ export const Post = ({
   imageUrl,
   user,
   viewsCount,
+  likesCount,
   commentsCount,
   tags,
   children,
@@ -80,6 +82,10 @@ export const Post = ({
             <li>
               <EyeIcon />
               <span>{viewsCount}</span>
+            </li>
+            <li>
+              <FavoriteIcon />
+              <span>{likesCount}</span>
             </li>
             <li>
               <CommentIcon />
