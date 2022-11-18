@@ -33,7 +33,6 @@ const authSlice = createSlice({
     reducers: {
         logout: (state) => {
             state.data = null;
-
         }
     },
     extraReducers: {
@@ -89,9 +88,7 @@ const authSlice = createSlice({
 //      }
 
 
-export const selectIsAuth = (state) =>
-    
-    Boolean(state.auth.data);
+export const selectIsAuth = (state) => Boolean(state.auth?.data?.length);
 
 export const authReducer = authSlice.reducer;
 
