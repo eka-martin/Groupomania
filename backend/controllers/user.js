@@ -17,7 +17,7 @@ exports.signup = (req, res, next) => {
                 fullName: req.body.fullName,
                 email: req.body.email,
                 avatarUrl: req.body.avatarUrl,
-                isAdmin: "false",
+                //isAdmin: "false",
                 password: hash
             });
             user.save()
@@ -40,11 +40,12 @@ exports.login = (req, res, next) => {
                         } else {
                             res.status(200).json({
                                 userId: user._id,
-                                isAdmin: user.isAdmin,
+                                //isAdmin: user.isAdmin,
                                 token: jwt.sign(
                                     //userId c'est pour que les autres utilisateurs pouvez pas modifier mon post
                                     { userId: user._id,
-                                        isAdmin: user.isAdmin, },
+                                        //isAdmin: user.isAdmin,
+                                     },
                                     process.env.SECRET_TOKEN,
                                     { expiresIn: '24h' }
                                 )

@@ -6,6 +6,7 @@ export let axios = a.create({
 
 axios.interceptors.request.use((config) =>
   config.headers.Authorization = 'Bearer ' + window.localStorage.getItem('token')
+  
 )
 
 //config.headers.Accept = 'Content-Type': 'multipart/form-data';
